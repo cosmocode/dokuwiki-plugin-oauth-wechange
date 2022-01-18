@@ -1,7 +1,7 @@
 base   oauthwechange
 author Andreas Gohr
 email  dokuwiki@cosmocode.de
-date   2022-01-11
+date   2022-01-18
 name   oauth WECHANGE Service
 desc   WECHANGE Service for use with the oAuth Plugin
 url    http://www.dokuwiki.org/plugin:oauthwechange
