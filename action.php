@@ -21,14 +21,14 @@ class action_plugin_oauthwechange extends \dokuwiki\plugin\oauth\Adapter
         $data = [];
 
         // basic user data
-        $result = json_decode($oauth->request('o/me'), true);
-        $data['user'] = $result['name'];
+        $json = $oauth->request($this->getConf('baseurl') . '/o/me?format=json');
+        $result = json_decode($json, true);
+        $data['user'] = $result['id'];
         $data['name'] = $result['name'];
         $data['mail'] = $result['email'];
 
-        if (isset($result['group'])) {
-            $groups = json_decode($result['group'], true);
-            foreach ($groups as $id => $slug) {
+        if (isset($result['group']) && is_array($result['group'])) {
+            foreach ($result['group'] as $id => $slug) {
                 $data['grps'][] = "$id-$slug";
             }
         }
