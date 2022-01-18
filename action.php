@@ -45,7 +45,7 @@ class action_plugin_oauthwechange extends \dokuwiki\plugin\oauth\Adapter
     /** @inheritDoc */
     public function getLabel()
     {
-        return 'WECHANGE';
+        return $this->getConf('label', 'WECHANGE');
     }
 
     /** @inheritDoc */
