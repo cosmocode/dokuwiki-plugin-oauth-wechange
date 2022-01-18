@@ -29,7 +29,7 @@ class action_plugin_oauthwechange extends \dokuwiki\plugin\oauth\Adapter
 
         if (isset($result['group']) && is_array($result['group'])) {
             foreach ($result['group'] as $id => $slug) {
-                $data['grps'][] = "$id-$slug";
+                $data['grps'][] = $id;
             }
         }
 
